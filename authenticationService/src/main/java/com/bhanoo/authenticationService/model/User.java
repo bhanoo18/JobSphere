@@ -22,7 +22,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="users")
+@Table(name="users_table")
 public class User {
 	
 	@Id
@@ -37,7 +37,7 @@ public class User {
 	private String password;
 	
 	@ElementCollection(fetch = FetchType.EAGER)
-	@CollectionTable(name="user_roles",joinColumns = @JoinColumn(name="user_id"))
+	@CollectionTable(name="user_roles_table",joinColumns = @JoinColumn(name="user_id"))
 	@Column(name="role")
 	private Set<String> roles;
 
